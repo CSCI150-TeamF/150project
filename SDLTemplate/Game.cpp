@@ -1,22 +1,9 @@
 #include "Game.h"
 #include "includes.h"
 // our Game object
-Game* g_game = 0;
-int main(int argc, char* argv[])
-{
-	g_game = new Game();
-	g_game->init("Chapter 1", 100, 100, 640, 480, 0);
-	while (g_game->running())
-	{
-		g_game->handleEvents();
-		g_game->update();
-		g_game->render();
-		SDL_Delay(10);
-	}
-	g_game->clean();
-	return 0;
-}
-
+GameObject* m_go;
+GameObject* m_player;
+GameObject* m_enemy;
 bool Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
 	// attempt to initialize SDL
@@ -64,8 +51,17 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		return false;
 	}
 	
-	m_go.load(100, 100, 128, 82, "animate");
-	m_player.load(300, 300, 128, 82, "animate");
+	m_go = new GameObject();
+	m_player = new Player();
+	m_enemy = new Enemy();
+
+	m_go->load(100, 100, 128, 82, "animate");
+	m_player->load(300, 300, 128, 82, "animate");
+	m_enemy->load(0, 0, 128, 82, "animate");
+
+	m_gameObjects.push_back(m_go);
+	m_gameObjects.push_back(m_player);
+	m_gameObjects.push_back(m_enemy);
 
 	std::cout << "init success\n";
 	m_bRunning = true; // everything inited successfully, start the main loop
@@ -74,11 +70,14 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 void Game::render()
 {
-	SDL_RenderClear(m_pRenderer);
-	m_go.draw(m_pRenderer);
-	m_player.draw(m_pRenderer);
-
-	SDL_RenderPresent(m_pRenderer);
+	SDL_RenderClear(m_pRenderer); // clear to the draw colour
+	// loop through our objects and draw them
+	for (std::vector<GameObject*>::size_type i = 0; i !=
+		m_gameObjects.size(); i++)
+	{
+		m_gameObjects[i]->draw(m_pRenderer);
+	}
+	SDL_RenderPresent(m_pRenderer); // draw to the screen
 }
 void Game::clean()
 {
@@ -105,6 +104,8 @@ void Game::handleEvents()
 }
 void Game::update()
 {
-	m_go.update();
-	m_player.update();
+	for (std::vector<GameObject*>::size_type i = 0; i !=m_gameObjects.size(); i++)
+	{
+		m_gameObjects[i]->update();
+	}
 }

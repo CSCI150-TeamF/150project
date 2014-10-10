@@ -2,12 +2,12 @@
 #include <SDL_image.h>
 #include "GameObject.h"
 #include "Player.h"
+#include "Enemy.h"
 
-GameObject m_go;
-Player m_player;
 
 #ifndef __Game__
 #define __Game__
+
 class Game
 {
 public:
@@ -21,6 +21,7 @@ public:
 	void clean();
 	// a function to access the private running variable
 	bool running() { return m_bRunning; }
+	std::vector<GameObject*> m_gameObjects;
 private:
 	SDL_Window* m_pWindow;
 	SDL_Renderer* m_pRenderer;

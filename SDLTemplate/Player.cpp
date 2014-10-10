@@ -13,3 +13,7 @@ void Player::update()
 {
 	m_x -= 1;
 }
+void Player::clean()
+{
+
+}
