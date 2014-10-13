@@ -1,9 +1,8 @@
 #include "Game.h"
 #include "includes.h"
 // our Game object
-GameObject* m_go;
-GameObject* m_player;
-GameObject* m_enemy;
+Game* Game::s_pInstance = 0;
+
 bool Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
 	// attempt to initialize SDL
@@ -51,17 +50,10 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		return false;
 	}
 	
-	m_go = new GameObject();
-	m_player = new Player();
-	m_enemy = new Enemy();
-
-	m_go->load(100, 100, 128, 82, "animate");
-	m_player->load(300, 300, 128, 82, "animate");
-	m_enemy->load(0, 0, 128, 82, "animate");
-
-	m_gameObjects.push_back(m_go);
-	m_gameObjects.push_back(m_player);
-	m_gameObjects.push_back(m_enemy);
+	m_pGameStateMachine = new GameStateMachine();
+	m_pGameStateMachine->changeState(new MenuState());
+	m_pGameStateMachine->changeState(new PlayState());
+	
 
 	std::cout << "init success\n";
 	m_bRunning = true; // everything inited successfully, start the main loop
@@ -70,14 +62,9 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 void Game::render()
 {
-	SDL_RenderClear(m_pRenderer); // clear to the draw colour
-	// loop through our objects and draw them
-	for (std::vector<GameObject*>::size_type i = 0; i !=
-		m_gameObjects.size(); i++)
-	{
-		m_gameObjects[i]->draw(m_pRenderer);
-	}
-	SDL_RenderPresent(m_pRenderer); // draw to the screen
+	SDL_RenderClear(m_pRenderer);
+	m_pGameStateMachine->render();
+	SDL_RenderPresent(m_pRenderer);
 }
 void Game::clean()
 {
@@ -89,6 +76,7 @@ void Game::clean()
 }
 void Game::handleEvents()
 {
+	//needs update
 	SDL_Event event;
 	if (SDL_PollEvent(&event))
 	{
@@ -97,15 +85,15 @@ void Game::handleEvents()
 		case SDL_QUIT:
 			m_bRunning = false;
 			break;
+		case SDL_SCANCODE_RETURN:
+			m_pGameStateMachine->changeState(new PlayState());
 		default:
 			break;
 		}
+		
 	}
 }
 void Game::update()
 {
-	for (std::vector<GameObject*>::size_type i = 0; i !=m_gameObjects.size(); i++)
-	{
-		m_gameObjects[i]->update();
-	}
+	m_pGameStateMachine->update();
 }

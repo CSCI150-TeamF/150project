@@ -36,6 +36,12 @@
     <ClCompile Include="MenuState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PlayState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStateMachine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -60,6 +66,12 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="GameState.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayState.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStateMachine.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

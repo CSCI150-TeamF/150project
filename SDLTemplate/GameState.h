@@ -1,4 +1,7 @@
 #include "includes.h"
+
+#ifndef __GameState__
+#define __GameState__
 class GameState
 {
 public:
@@ -8,3 +11,4 @@ public:
 	virtual bool onExit() = 0;
 	virtual std::string getStateID() const = 0;
 };
+#endif

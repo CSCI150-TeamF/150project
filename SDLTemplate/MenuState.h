@@ -1,7 +1,7 @@
 #include "includes.h"
 #include "GameState.h"
 
-class MenuState : GameState
+class MenuState : public GameState
 {
 public:
 	virtual void update();
