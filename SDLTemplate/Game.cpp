@@ -1,6 +1,7 @@
 #include "Game.h"
 #include "includes.h"
 // our Game object
+//Game is static. all references to game are now refering to the same Single Game object
 Game* Game::s_pInstance = 0;
 
 bool Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
@@ -44,13 +45,9 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		return false; // SDL init fail
 	}
 	
-	if (!TheTextureManager::Instance()->load("animate.png",
-		"animate", m_pRenderer))
-	{
-		return false;
-	}
-	
+	//Create GameState Machine
 	m_pGameStateMachine = new GameStateMachine();
+	//create and Push initial Gamestates
 	m_pGameStateMachine->changeState(new MenuState());
 	m_pGameStateMachine->changeState(new PlayState());
 	
@@ -62,9 +59,9 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 void Game::render()
 {
-	SDL_RenderClear(m_pRenderer);
-	m_pGameStateMachine->render();
-	SDL_RenderPresent(m_pRenderer);
+	SDL_RenderClear(m_pRenderer); //clear Renderer
+	m_pGameStateMachine->render(); //prepare render current state
+	SDL_RenderPresent(m_pRenderer); //render the stuff set up by GameStateMachine
 }
 void Game::clean()
 {
@@ -95,5 +92,5 @@ void Game::handleEvents()
 }
 void Game::update()
 {
-	m_pGameStateMachine->update();
+	m_pGameStateMachine->update(); //update the current state
 }

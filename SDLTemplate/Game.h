@@ -29,7 +29,7 @@ public:
 	GameStateMachine* m_pGameStateMachine;
 	SDL_Renderer* m_pRenderer;
 	
-	static Game* Instance()
+	static Game* Instance() //create only one instance of game
 	{
 		if (s_pInstance == 0)
 		{

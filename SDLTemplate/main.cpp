@@ -1,6 +1,6 @@
 #include "Game.h"
 #include "includes.h"
-// our Game object
+// our Game Loop
 
 int main(int argc, char* argv[])
 {

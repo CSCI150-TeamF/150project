@@ -1,7 +1,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include "includes.h"
-
+//used to load up images and save them into the Textuemap
 #ifndef __TextureManager__
 #define __TextureManager__
 class TextureManager

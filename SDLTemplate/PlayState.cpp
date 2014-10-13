@@ -10,7 +10,7 @@ void PlayState::update()
 	}
 }
 
-void PlayState::render()
+void PlayState::render() //moved form game render
 {
 	SDL_RenderClear(TheGame::Instance()->getRenderer()); // clear to the draw colour
 	// loop through our objects and draw them
@@ -22,13 +22,18 @@ void PlayState::render()
 	SDL_RenderPresent(TheGame::Instance()->getRenderer()); // draw to the screen
 }
 
-bool PlayState::onEnter()
+bool PlayState::onEnter() //setup the Playstate
 {
 	cout << "entering playstate.\n";
 
 	GameObject* m_go;
 	GameObject* m_player;
 	GameObject* m_enemy;
+	if (!TheTextureManager::Instance()->load("animate.png",
+		"animate", Game::Instance()->m_pRenderer))
+	{
+		return false;
+	}
 
 	m_go = new GameObject();
 	m_player = new Player();

@@ -1,6 +1,7 @@
 #include "includes.h"
 #include "GameState.h"
 
+//state used for inventory/pause
 class MenuState : public GameState
 {
 public:

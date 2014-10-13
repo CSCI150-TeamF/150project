@@ -1,7 +1,7 @@
 #include <SDL.h>
 #include "TextureManager.h"
 #include "includes.h"
-
+// All objects that are rendered should inherit this class
 #ifndef __GameObject__
 #define __GameObject__
 class GameObject

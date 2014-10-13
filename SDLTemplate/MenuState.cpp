@@ -1,5 +1,6 @@
 #include "MenuState.h"
 
+//implement menu
 const std::string MenuState::s_menuID = "MENU";
 void MenuState::update()
 {

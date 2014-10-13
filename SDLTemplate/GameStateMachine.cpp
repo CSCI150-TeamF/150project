@@ -1,12 +1,12 @@
 #include "GameStateMachine.h"
 
-void GameStateMachine::pushState(GameState* pState)
+void GameStateMachine::pushState(GameState* pState) //push in a new state
 {
 	m_gameStates.push_back(pState);
 	m_gameStates.back()->onEnter();
 }
 
-void GameStateMachine::popState()
+void GameStateMachine::popState() //remove state
 {
 	if (!m_gameStates.empty())
 	{
@@ -18,7 +18,7 @@ void GameStateMachine::popState()
 	}
 }
 
-void GameStateMachine::changeState(GameState* pState)
+void GameStateMachine::changeState(GameState* pState) //change state without removal of old state
 {
 	if (!m_gameStates.empty())
 	{

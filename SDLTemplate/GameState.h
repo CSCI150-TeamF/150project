@@ -1,5 +1,7 @@
 #include "includes.h"
 
+//general form for all game states
+
 #ifndef __GameState__
 #define __GameState__
 class GameState

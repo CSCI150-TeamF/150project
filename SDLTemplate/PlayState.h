@@ -1,5 +1,6 @@
 #include "GameState.h"
 #include "GameObject.h"
+//state we use to render the game
 #ifndef __PlayState__
 #define __PlayState__
 class PlayState : public GameState
