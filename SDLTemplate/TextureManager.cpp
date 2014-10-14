@@ -2,7 +2,7 @@
 #include "includes.h"
 TextureManager* TextureManager::s_pInstance = 0;
 
-bool TextureManager::load(std::string fileName, std::string id, SDL_Renderer* pRenderer)
+bool TextureManager::load(std::string fileName, std::string id, SDL_Renderer* pRenderer) //load and save the sprites
 {
 	SDL_Surface* pTempSurface = IMG_Load(fileName.c_str());
 	if (pTempSurface == 0)
@@ -21,7 +21,7 @@ bool TextureManager::load(std::string fileName, std::string id, SDL_Renderer* pR
 	// reaching here means something went wrong
 	return false;
 }
-void TextureManager::draw(std::string id, int x, int y, int width, int height, SDL_Renderer* pRenderer, SDL_RendererFlip flip)
+void TextureManager::draw(std::string id, int x, int y, int width, int height, SDL_Renderer* pRenderer, SDL_RendererFlip flip) //draw the sprites to a rectangle wih apropriate size
 {
 	SDL_Rect srcRect;
 	SDL_Rect destRect;

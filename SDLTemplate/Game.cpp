@@ -1,21 +1,8 @@
 #include "Game.h"
 #include "includes.h"
 // our Game object
-Game* g_game = 0;
-int main(int argc, char* argv[])
-{
-	g_game = new Game();
-	g_game->init("Chapter 1", 100, 100, 640, 480, 0);
-	while (g_game->running())
-	{
-		g_game->handleEvents();
-		g_game->update();
-		g_game->render();
-		SDL_Delay(10);
-	}
-	g_game->clean();
-	return 0;
-}
+//Game is static. all references to game are now refering to the same Single Game object
+Game* Game::s_pInstance = 0;
 
 bool Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
@@ -58,14 +45,12 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		return false; // SDL init fail
 	}
 	
-	if (!TheTextureManager::Instance()->load("animate.png",
-		"animate", m_pRenderer))
-	{
-		return false;
-	}
+	//Create GameState Machine
+	m_pGameStateMachine = new GameStateMachine();
+	//create and Push initial Gamestates
+	m_pGameStateMachine->changeState(new MenuState());
+	m_pGameStateMachine->changeState(new PlayState());
 	
-	m_go.load(100, 100, 128, 82, "animate");
-	m_player.load(300, 300, 128, 82, "animate");
 
 	std::cout << "init success\n";
 	m_bRunning = true; // everything inited successfully, start the main loop
@@ -74,11 +59,9 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 void Game::render()
 {
-	SDL_RenderClear(m_pRenderer);
-	m_go.draw(m_pRenderer);
-	m_player.draw(m_pRenderer);
-
-	SDL_RenderPresent(m_pRenderer);
+	SDL_RenderClear(m_pRenderer); //clear Renderer
+	m_pGameStateMachine->render(); //prepare render current state
+	SDL_RenderPresent(m_pRenderer); //render the stuff set up by GameStateMachine
 }
 void Game::clean()
 {
@@ -90,6 +73,7 @@ void Game::clean()
 }
 void Game::handleEvents()
 {
+	//needs update
 	SDL_Event event;
 	if (SDL_PollEvent(&event))
 	{
@@ -98,13 +82,15 @@ void Game::handleEvents()
 		case SDL_QUIT:
 			m_bRunning = false;
 			break;
+		case SDL_SCANCODE_RETURN:
+			m_pGameStateMachine->changeState(new PlayState());
 		default:
 			break;
 		}
+		
 	}
 }
 void Game::update()
 {
-	m_go.update();
-	m_player.update();
+	m_pGameStateMachine->update(); //update the current state
 }
