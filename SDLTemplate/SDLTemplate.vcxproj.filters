@@ -42,6 +42,15 @@
     <ClCompile Include="GameStateMachine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -75,6 +84,15 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Layer.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelParser.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TileLayer.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

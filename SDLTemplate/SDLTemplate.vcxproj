@@ -75,6 +75,9 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameStateMachine.cpp" />
+    <ClCompile Include="Layer.cpp" />
+    <ClCompile Include="Level.cpp" />
+    <ClCompile Include="LevelParser.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -89,10 +92,13 @@
     <ClInclude Include="GameStateMachine.h" />
     <ClInclude Include="includes.h" />
     <ClInclude Include="Layer.h" />
+    <ClInclude Include="Level.h" />
+    <ClInclude Include="LevelParser.h" />
     <ClInclude Include="MenuState.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayState.h" />
     <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="TileLayer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
