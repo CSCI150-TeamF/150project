@@ -4,10 +4,10 @@
 
 void Layer::render()
 {
-
+	//Nothing atm
 }
 
 void Layer::update()
 {
-
+	//Nothing atm
 }

@@ -1,6 +1,7 @@
 #include "LevelParser.h"
 #include "includes.h"
-/*
+/* //Needs TiXmlDocument in order to Run correctly
+
 Level* LevelParser::parseLevel(const char *levelFile)
 {
 //create and load map XML
