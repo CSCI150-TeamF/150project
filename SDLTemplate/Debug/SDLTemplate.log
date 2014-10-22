@@ -1,10 +1,19 @@
-﻿Build started 10/21/2014 4:42:40 PM.
+﻿Build started 10/22/2014 12:58:30 PM.
      1>Project "C:\Users\User\Source\Repos\150project2\SDLTemplate\SDLTemplate.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\SDL2\SDL2-devel-2.0.3-VC\SDL2-2.0.3\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Base64.cpp Layer.cpp Level.cpp LevelParser.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\SDL2\SDL2-devel-2.0.3-VC\SDL2-2.0.3\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Base64.cpp Enemy.cpp Game.cpp GameObject.cpp GameStateMachine.cpp Layer.cpp Level.cpp LevelParser.cpp main.cpp MenuState.cpp Player.cpp PlayState.cpp TextureManager.cpp
+         TextureManager.cpp
+         PlayState.cpp
+         Player.cpp
+         MenuState.cpp
+         main.cpp
          LevelParser.cpp
          Level.cpp
          Layer.cpp
+         GameStateMachine.cpp
+         GameObject.cpp
+         Game.cpp
+         Enemy.cpp
          Base64.cpp
          Generating Code...
        Link:
@@ -27,4 +36,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:15.28
+Time Elapsed 00:00:25.02

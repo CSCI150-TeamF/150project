@@ -5,7 +5,7 @@
 #ifndef __Level__
 #define __Level__
 
-struct Tileset
+struct Tileset //used in LevelParser.cpp
 {
 	int firstGridID;
 	int tileWidth;
