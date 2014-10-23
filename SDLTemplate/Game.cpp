@@ -88,9 +88,12 @@ void Game::handleEvents()
 			break;
 		}
 		
+		
 	}
 }
 void Game::update()
 {
+	
+	
 	m_pGameStateMachine->update(); //update the current state
 }

@@ -23,3 +23,28 @@ void GameObject::update()
 void GameObject::clean(){
 
 }
+
+
+void GameObject::collision()
+
+{
+	if (m_x < 0)
+	{
+		m_x = 0;
+	}
+	if (m_x > 640 - m_width)
+	{
+		m_x = 640 - m_width;
+	}
+	if (m_y < 0)
+	{
+		m_y = 0;
+	}
+	if (m_y > 480 - m_height)
+	{
+		m_y = 480 - m_height;
+	}
+
+}
+
+
