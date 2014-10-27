@@ -31,6 +31,7 @@ private:
 	int m_numRows;
 	int m_tileSize;
 
+	//needed to scroll map used later
 	//Vector2D m_position;
 	//Vector2D m_velocity;
 

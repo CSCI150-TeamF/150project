@@ -25,11 +25,19 @@ void PlayState::render() //moved form game render
 
 bool PlayState::onEnter() //setup the Playstate
 {
+	/*
+	//load level
+	Level* pLevel;
+	LevelParser levelParser;
+	pLevel = levelParser.parseLevel("map1.tmx");
+	//end load level
+	*/
 	cout << "entering playstate.\n";
 
 	GameObject* m_go;
 	GameObject* m_player;
 	GameObject* m_enemy;
+
 	if (!TheTextureManager::Instance()->load("animate.png",
 		"animate", Game::Instance()->m_pRenderer))
 	{
