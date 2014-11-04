@@ -14,20 +14,36 @@ void GameObject::load(int x, int y, int width, int height, std::string textureID
 }
 void GameObject::draw(SDL_Renderer* pRenderer) //draw game object
 {
-	if (hspeed > 0)
+	if (m_direction > 0)
 	{
-		TextureManager::Instance()->drawFrame(m_textureID, m_x + mVel_x, m_y + mVel_y, m_width, m_height, m_currentRow, m_currentFrame, pRenderer);
+		TextureManager::Instance()->drawFrame(m_textureID, m_x, m_y, m_width, m_height, m_currentRow, m_currentFrame, pRenderer);
 		
 	}
 	else
 	{
-		TextureManager::Instance()->drawFrame(m_textureID, m_x + mVel_x, m_y + mVel_y, m_width, m_height, m_currentRow, m_currentFrame, pRenderer, SDL_FLIP_HORIZONTAL);
+		TextureManager::Instance()->drawFrame(m_textureID, m_x, m_y, m_width, m_height, m_currentRow, m_currentFrame, pRenderer, SDL_FLIP_HORIZONTAL);
 		
 	}
 }
 void GameObject::update()
 {
 	
+}
+
+void GameObject::updateDirection(int dirSign)//update direction
+{
+	m_direction = dirSign;
+}
+
+void GameObject::setX(int &x)
+{
+	m_x = x;
+}
+
+
+int GameObject::getX()
+{
+	return m_x;
 }
 
 void GameObject::reset()
@@ -64,13 +80,6 @@ void GameObject::collision()
 		m_currentFrame = 2;
 	}
 
-}
-
-void GameObject::handleEvents()
-{
-	
-	
-	
 }
 
 

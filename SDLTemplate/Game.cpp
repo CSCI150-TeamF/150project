@@ -25,7 +25,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 			if (m_pRenderer != 0) // renderer init success
 			{
 				std::cout << "renderer creation success\n";
-				SDL_SetRenderDrawColor(m_pRenderer, 255, 0, 0, 255);
+				SDL_SetRenderDrawColor(m_pRenderer, 193, 194, 198, 255);
 			}
 			else
 			{
@@ -89,6 +89,7 @@ void Game::handleEvents()
 			break;
 		}
 
+		//current GameState -> handleEvents
 		m_pGameStateMachine->handleEvents(&event);
 		
 
