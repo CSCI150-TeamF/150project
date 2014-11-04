@@ -73,6 +73,7 @@ void Game::clean()
 }
 void Game::handleEvents()
 {
+
 	//needs update
 	SDL_Event event;
 	if (SDL_PollEvent(&event))
@@ -87,8 +88,10 @@ void Game::handleEvents()
 		default:
 			break;
 		}
+
+		m_pGameStateMachine->handleEvents(&event);
 		
-		
+
 	}
 }
 void Game::update()

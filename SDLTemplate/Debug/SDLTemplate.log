@@ -1,4 +1,4 @@
-﻿Build started 10/23/2014 2:40:58 PM.
+﻿Build started 11/2/2014 9:09:01 PM.
      1>Project "C:\Users\Edwin\Source\Repos\150project2\SDLTemplate\SDLTemplate.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\SDL2\SDL2-devel-2.0.3-VC\SDL2-2.0.3\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GameObject.cpp
@@ -9,6 +9,7 @@
          Debug\Game.obj
          Debug\GameObject.obj
          Debug\GameStateMachine.obj
+         Debug\InputHandler.obj
          Debug\Layer.obj
          Debug\Level.obj
          Debug\LevelParser.obj
@@ -22,4 +23,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.70
+Time Elapsed 00:00:00.82
