@@ -6,9 +6,14 @@ void MenuState::update()
 {
 	// nothing for now
 }
+
 void MenuState::render()
 {
 	// nothing for now
+}
+void MenuState::handleEvents(SDL_Event *event)
+{
+	//nothing for now
 }
 bool MenuState::onEnter()
 {
