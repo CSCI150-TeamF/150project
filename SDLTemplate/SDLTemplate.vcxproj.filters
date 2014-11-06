@@ -57,6 +57,18 @@
     <ClCompile Include="TileLayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="tinystr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxmlerror.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxmlparser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -102,6 +114,12 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Base64.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tinystr.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
