@@ -11,7 +11,7 @@ void Player::draw(SDL_Renderer* pRenderer) //draw player
 }
 void Player::update() //update player position
 {
-	m_x -= 1;
+	m_y -= 1;
 }
 void Player::clean()
 {
