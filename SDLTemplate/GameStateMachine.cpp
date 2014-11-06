@@ -51,3 +51,11 @@ void GameStateMachine::render()
 		m_gameStates.back()->render();
 	}
 }
+
+void GameStateMachine::handleEvents(SDL_Event *e)
+{
+	if (!m_gameStates.empty())
+	{
+		m_gameStates.back()->handleEvents(e);
+	}
+}
