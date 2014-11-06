@@ -1,13 +1,9 @@
-﻿Build started 11/6/2014 3:41:21 PM.
+﻿Build started 11/6/2014 3:50:38 PM.
      1>Project "C:\Users\User\Source\Repos\150project2\SDLTemplate\SDLTemplate.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\SDL2\SDL2-devel-2.0.3-VC\SDL2-2.0.3\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Enemy.cpp Game.cpp GameObject.cpp GameStateMachine.cpp main.cpp MenuState.cpp Player.cpp PlayState.cpp tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp
-         tinyxmlparser.cpp
-         tinyxmlerror.cpp
-         tinyxml.cpp
-         tinystr.cpp
-         PlayState.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\SDL2\SDL2-devel-2.0.3-VC\SDL2-2.0.3\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Enemy.cpp Game.cpp GameObject.cpp GameStateMachine.cpp MenuState.cpp PlayState.cpp Player.cpp main.cpp
          Player.cpp
+         PlayState.cpp
          MenuState.cpp
          GameStateMachine.cpp
          GameObject.cpp
@@ -36,10 +32,9 @@
          Debug\tinyxml.obj
          Debug\tinyxmlerror.obj
          Debug\tinyxmlparser.obj
-     1>MSVCRTD.lib(cinitexe.obj) : warning LNK4098: defaultlib 'msvcrt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
          SDLTemplate.vcxproj -> C:\Users\User\Source\Repos\150project2\Debug\SDLTemplate.exe
      1>Done Building Project "C:\Users\User\Source\Repos\150project2\SDLTemplate\SDLTemplate.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:21.59
+Time Elapsed 00:00:14.89
