@@ -8,10 +8,11 @@ void PlayState::update()
 	{
 		m_gameObjects[i]->update();
 		m_gameObjects[i]->collision();
+		m_gameObjects[i]->handleInput();
 	}
 }
 
-void PlayState::render() //moved form game render
+void PlayState::render() //moved from game render
 {
 	SDL_RenderClear(TheGame::Instance()->getRenderer()); // clear to the draw colour
 	// loop through our objects and draw them
