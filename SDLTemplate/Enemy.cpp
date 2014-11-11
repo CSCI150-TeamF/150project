@@ -7,14 +7,12 @@ void Enemy::load(int x, int y, int width, int height, std::string textureID)
 }
 void Enemy::draw(SDL_Renderer* pRenderer)
 {
-	GameObject::draw(pRenderer);
+	GameObject::draw();
 }
 void Enemy::update()
 {
 	m_currentFrame = int(((SDL_GetTicks() / 60) % 6));
 }
-
-
 
 void Enemy::clean()
 {

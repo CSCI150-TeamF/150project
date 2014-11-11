@@ -49,7 +49,6 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	m_pGameStateMachine = new GameStateMachine();
 	//create and Push initial Gamestates
 	m_pGameStateMachine->changeState(new MenuState());
-	m_pGameStateMachine->changeState(new PlayState());
 	
 
 	std::cout << "init success\n";
@@ -73,7 +72,7 @@ void Game::clean()
 }
 void Game::handleEvents()
 {
-
+	
 	//needs update
 	SDL_Event event;
 	if (SDL_PollEvent(&event))
@@ -83,8 +82,9 @@ void Game::handleEvents()
 		case SDL_QUIT:
 			m_bRunning = false;
 			break;
-		case SDL_SCANCODE_RETURN:
+		case SDL_SCANCODE_RETURN: //NOTE: This does nothing. Why?
 			m_pGameStateMachine->changeState(new PlayState());
+			break;
 		default:
 			break;
 		}
@@ -97,7 +97,5 @@ void Game::handleEvents()
 }
 void Game::update()
 {
-	
-	
 	m_pGameStateMachine->update(); //update the current state
 }

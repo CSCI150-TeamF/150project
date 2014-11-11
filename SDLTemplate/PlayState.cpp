@@ -1,14 +1,18 @@
 #include "PlayState.h"
 #include "Game.h"
+#include "MenuObject.h"
 const string PlayState::s_playID = "PLAY";
 
 void PlayState::update()
 {
 	for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
 	{
-		m_gameObjects[i]->update();
-		m_gameObjects[i]->collision();
-		m_gameObjects[i]->handleInput();
+
+
+		currentObject = m_gameObjects[i];
+		currentObject->collision();
+
+
 	}
 }
 
@@ -16,11 +20,9 @@ void PlayState::render() //moved from game render
 {
 	SDL_RenderClear(TheGame::Instance()->getRenderer()); // clear to the draw colour
 	// loop through our objects and draw them
-	for (std::vector<GameObject*>::size_type i = 0; i !=
-		m_gameObjects.size(); i++)
+	for (std::vector<GameObject*>::size_type i = 0; i !=m_gameObjects.size(); i++)
 	{
-		m_gameObjects[i]->draw(TheGame::Instance()->getRenderer());
-		
+		m_gameObjects[i]->draw();
 	}
 	SDL_RenderPresent(TheGame::Instance()->getRenderer()); // draw to the screen
 }
@@ -38,6 +40,7 @@ void PlayState::handleEvents(SDL_Event *event) //handle gameObject Input
 				//update m_x, update direction, animate
 				case SDLK_LEFT: {currentObject->setX(x -= 10); currentObject->updateDirection(-1); currentObject->update(); } break;
 				case SDLK_RIGHT: {currentObject->setX(x += 10); currentObject->updateDirection(1); currentObject->update(); } break;
+				case SDLK_SPACE: {TheGame::Instance()->m_pGameStateMachine->changeState(new MenuState()); } break;
 				}
 			}	
 			else if (event->type == SDL_KEYUP)

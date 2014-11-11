@@ -9,7 +9,7 @@ void Player::load(int x, int y, int width, int height, std::string textureID) //
 }
 void Player::draw(SDL_Renderer* pRenderer) //draw player
 {
-	GameObject::draw(pRenderer);
+	GameObject::draw();
 }
 void Player::update() //update player position
 {
