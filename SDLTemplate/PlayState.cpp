@@ -44,7 +44,7 @@ bool PlayState::onEnter() //setup the Playstate
 		return false;
 	}
 
-	m_go = new GameObject();
+	m_go = new GameObject();  
 	m_player = new Player();
 	m_enemy = new Enemy();
 

@@ -11,8 +11,9 @@ void Enemy::draw(SDL_Renderer* pRenderer)
 }
 void Enemy::update()
 {
-	m_y += 1;
-	m_x += 1;
+	m_position.setX(m_position.getX() + 1);  //replaced m_y += 1; m_x += 1;
+	m_position.setX(m_position.getX() + 1);
+	
 	m_currentFrame = int(((SDL_GetTicks() / 100) % 6));
 }
 void Enemy::clean()

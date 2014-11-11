@@ -38,13 +38,21 @@ public:
 		}
 		return s_pInstance;
 	}
-
+	
+	
 private:
+	// make the constructor private
+	Game() {}
+
+	// create the s_pInstance member variable
+	static Game* s_pInstance;  
+	
 	SDL_Window* m_pWindow;
 	int m_currentFrame;
 	bool m_bRunning;
-	static Game* s_pInstance;
-	Game() {}
+	
 };
+// create the typedef
 typedef Game TheGame;
+
 #endif
