@@ -57,10 +57,23 @@
     <ClCompile Include="TileLayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="MenuObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MenuButton.cpp">
+=======
+    <ClCompile Include="tinystr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxmlerror.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxmlparser.cpp">
+>>>>>>> 703cfe8bd2a7763727d83a7fe12877872fe6b617
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -110,6 +123,7 @@
     <ClInclude Include="Base64.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="MenuObject.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -117,6 +131,12 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="MenuButton.h">
+=======
+    <ClInclude Include="tinystr.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml.h">
+>>>>>>> 703cfe8bd2a7763727d83a7fe12877872fe6b617
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
