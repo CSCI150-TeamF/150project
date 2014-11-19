@@ -3,6 +3,11 @@
 #include "MenuObject.h"
 const string PlayState::s_playID = "PLAY";
 
+//*****************************************************************************************//
+// SPECIAL NOTE: GAME OBJECT AND VECTOR 2D GET/SET FUNCTIONS USE/RETURN FLOAT and NOT INT! //
+// IF YOU HAVE PROBLEMS CHECK THAT THE TYPES MATCH! Cast as Needed.                        //
+//*****************************************************************************************//
+
 void PlayState::update()
 {
 	for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
@@ -34,7 +39,7 @@ void PlayState::handleEvents(SDL_Event *event) //handle gameObject Input
 			if (event->type == SDL_KEYDOWN)
 			{
 				//get the x-value (m_x)
-				int x = currentObject->getX();
+				float x = currentObject->getX();
 				switch (event->key.keysym.sym)
 				{
 				//update m_x, update direction, animate
@@ -66,9 +71,11 @@ bool PlayState::onEnter() //setup the Playstate
 		return false;
 	}
 
-	
+	cout << "1";
 	m_enemy = new Enemy();
-	m_enemy->load(0, 480, 128, 82, "animate");
+	cout << "3";
+	m_enemy->load(0.0, 480.0, 128, 82, "animate");
+	cout << "2";
 	m_gameObjects.push_back(m_enemy);
 
 	return true;

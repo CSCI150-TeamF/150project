@@ -12,10 +12,10 @@ void MenuButton::draw()
 }
 void MenuButton::update(SDL_Event* event, int x, int y)
 {
-	if (x < (m_x + m_width)
-		&& x > m_x
-		&& y < (m_y + m_height)
-		&& y > m_y)
+	if (x < ((int)m_position->getX() + m_width)
+		&& x >(int)m_position->getX()
+		&& y < ((int)m_position->getY() + m_height)
+		&& y >(int)m_position->getY())
 	{
 		m_currentFrame = MOUSE_OVER;
 		if (event->button.button == SDL_BUTTON_LEFT)

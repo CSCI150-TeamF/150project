@@ -2,10 +2,11 @@
 #include "includes.h"
 #include "SDL.h"
 #include "Game.h"
-void GameObject::load(int x, int y, int width, int height, std::string textureID) //load game object
+void GameObject::load(float x, float y, int width, int height, std::string textureID) //load game object
 {
-	m_x = x;
-	m_y = y;
+	m_position = new Vector2D();
+	GameObject::setX(x);
+	GameObject::setY(y);
 	m_width = width;
 	m_height = height;
 	m_textureID = textureID;
@@ -19,12 +20,12 @@ void GameObject::draw() //draw game object
 	
 	if (m_direction > 0)
 	{
-		TextureManager::Instance()->drawFrame(m_textureID, m_x, m_y, m_width, m_height, m_currentRow, m_currentFrame, pRenderer);
+		TextureManager::Instance()->drawFrame(m_textureID, (int)m_position->getX(), (int)m_position->getY(), m_width, m_height, m_currentRow, m_currentFrame, pRenderer);
 		
 	}
 	else
 	{
-		TextureManager::Instance()->drawFrame(m_textureID, m_x, m_y, m_width, m_height, m_currentRow, m_currentFrame, pRenderer, SDL_FLIP_HORIZONTAL);
+		TextureManager::Instance()->drawFrame(m_textureID, (int)m_position->getX(), (int)m_position->getY(), m_width, m_height, m_currentRow, m_currentFrame, pRenderer, SDL_FLIP_HORIZONTAL);
 		
 	}
 }
@@ -38,15 +39,26 @@ void GameObject::updateDirection(int dirSign)//update direction
 	m_direction = dirSign;
 }
 
-void GameObject::setX(int &x)
+void GameObject::setX(float x)
 {
-	m_x = x;
+	m_position->setX(x);
 }
 
 
-int GameObject::getX()
+float GameObject::getX()
 {
-	return m_x;
+	return m_position->getX();
+}
+
+void GameObject::setY(float y)
+{
+	m_position->setY(y);
+}
+
+
+float GameObject::getY()
+{
+	return m_position->getY();
 }
 
 void GameObject::reset()
@@ -59,24 +71,24 @@ void GameObject::clean(){
 void GameObject::collision()
 
 {
-	if (m_x < 0)
+	if ((int)m_position->getX() < 0)
 	{
-		m_x = 0;
+		m_position->setX(0);
 		m_currentFrame = 2;
 	}
-	if (m_x > 640 - m_width)
+	if ((int)m_position->getX() > 640 - m_width)
 	{
-		m_x = 640 - m_width;
+		m_position->setX(640 - m_width);
 		m_currentFrame = 2;
 	}
-	if (m_y < 0)
+	if ((int)m_position->getY() < 0)
 	{
-		m_y = 0;
+		m_position->setY(0);
 		m_currentFrame = 2;
 	}
-	if (m_y > 480 - m_height)
+	if ((int)m_position->getY() > 480 - m_height)
 	{
-		m_y = 480 - m_height;
+		m_position->setY(480 - m_height);
 		m_currentFrame = 2;
 	}
 
