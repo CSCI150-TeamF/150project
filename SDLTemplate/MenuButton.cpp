@@ -1,5 +1,7 @@
 #include "MenuButton.h"
 
+//-------Replace arrows for dots-----------//
+
 MenuButton::MenuButton(const LoaderParams* pParams) :
 GameObject(pParams)
 {
@@ -12,10 +14,10 @@ void MenuButton::draw()
 }
 void MenuButton::update(SDL_Event* event, int x, int y)
 {
-	if (x < ((int)m_position->getX() + m_width)
-		&& x >(int)m_position->getX()
-		&& y < ((int)m_position->getY() + m_height)
-		&& y >(int)m_position->getY())
+	if (x < ((int)m_position.getX() + m_width)
+		&& x >(int)m_position.getX()
+		&& y < ((int)m_position.getY() + m_height)
+		&& y >(int)m_position.getY())
 	{
 		m_currentFrame = MOUSE_OVER;
 		if (event->button.button == SDL_BUTTON_LEFT)

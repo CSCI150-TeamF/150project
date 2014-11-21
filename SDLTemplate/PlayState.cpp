@@ -64,7 +64,10 @@ bool PlayState::onEnter() //setup the Playstate
 {
 	cout << "entering playstate.\n";
 
-	GameObject* m_enemy;
+	GameObject* m_enemy; 
+	GameObject* m_enemy2;
+
+
 	if (!TheTextureManager::Instance()->load("animate-alpha.png",
 		"animate", Game::Instance()->m_pRenderer))
 	{
@@ -73,10 +76,14 @@ bool PlayState::onEnter() //setup the Playstate
 
 	cout << "1";
 	m_enemy = new Enemy();
+	m_enemy2 = new Enemy();
+
 	cout << "3";
 	m_enemy->load(0.0, 480.0, 128, 82, "animate");
+	m_enemy2->load(0.0, 480.0, 128, 82, "animate");
 	cout << "2";
 	m_gameObjects.push_back(m_enemy);
+	m_gameObjects.push_back(m_enemy2);
 
 	return true;
 }

@@ -1,28 +1,45 @@
-﻿Build started 11/18/2014 9:44:28 PM.
-     1>Project "C:\Users\John\Documents\Visual Studio 2013\Projects\SDLTemplate\150project\SDLTemplate\SDLTemplate.vcxproj" on node 2 (Build target(s)).
+﻿Build started 11/21/2014 1:23:09 PM.
+     1>Project "C:\Users\CAConnects\Source\Repos\150project3\SDLTemplate\SDLTemplate.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\SDL2\SDL2-devel-2.0.3-VC\SDL2-2.0.3\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Enemy.cpp Game.cpp GameObject.cpp MenuButton.cpp MenuObject.cpp MenuState.cpp PlayState.cpp Player.cpp main.cpp
-         Enemy.cpp
-     1>c:\users\john\documents\visual studio 2013\projects\sdltemplate\150project\sdltemplate\loaderparams.h(11): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-         Generating Code...
-         Compiling...
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\SDL2\SDL2-devel-2.0.3-VC\SDL2-2.0.3\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Base64.cpp Enemy.cpp Game.cpp GameObject.cpp GameStateMachine.cpp Layer.cpp Level.cpp LevelParser.cpp main.cpp MenuButton.cpp MenuObject.cpp MenuState.cpp Player.cpp PlayState.cpp TextureManager.cpp TileLayer.cpp tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp
+         tinyxmlparser.cpp
+         tinyxmlerror.cpp
+         tinyxml.cpp
+         tinystr.cpp
+         TileLayer.cpp
+         TextureManager.cpp
          PlayState.cpp
-     1>c:\users\john\documents\visual studio 2013\projects\sdltemplate\150project\sdltemplate\loaderparams.h(11): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-         MenuButton.cpp
-     1>c:\users\john\documents\visual studio 2013\projects\sdltemplate\150project\sdltemplate\loaderparams.h(11): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-         GameObject.cpp
-     1>c:\users\john\documents\visual studio 2013\projects\sdltemplate\150project\sdltemplate\loaderparams.h(11): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\john\documents\visual studio 2013\projects\sdltemplate\150project\sdltemplate\gameobject.cpp(81): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\john\documents\visual studio 2013\projects\sdltemplate\150project\sdltemplate\gameobject.cpp(91): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-         Generating Code...
-         Skipping... (no relevant changes detected)
-         main.cpp
+     1>c:\users\caconnects\source\repos\150project3\sdltemplate\loaderparams.h(11): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
          Player.cpp
+     1>c:\users\caconnects\source\repos\150project3\sdltemplate\loaderparams.h(11): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
          MenuState.cpp
+     1>c:\users\caconnects\source\repos\150project3\sdltemplate\loaderparams.h(11): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\caconnects\source\repos\150project3\sdltemplate\menustate.cpp(25): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\caconnects\source\repos\150project3\sdltemplate\menustate.cpp(49): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\caconnects\source\repos\150project3\sdltemplate\menustate.cpp(79): warning C4018: '<' : signed/unsigned mismatch
          MenuObject.cpp
+     1>c:\users\caconnects\source\repos\150project3\sdltemplate\loaderparams.h(11): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\caconnects\source\repos\150project3\sdltemplate\menuobject.cpp(5): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         MenuButton.cpp
+     1>c:\users\caconnects\source\repos\150project3\sdltemplate\loaderparams.h(11): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+         main.cpp
+     1>c:\users\caconnects\source\repos\150project3\sdltemplate\loaderparams.h(11): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+         LevelParser.cpp
+         Level.cpp
+         Layer.cpp
+         GameStateMachine.cpp
+         GameObject.cpp
+     1>c:\users\caconnects\source\repos\150project3\sdltemplate\loaderparams.h(11): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\caconnects\source\repos\150project3\sdltemplate\gameobject.cpp(86): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\caconnects\source\repos\150project3\sdltemplate\gameobject.cpp(96): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
          Game.cpp
+     1>c:\users\caconnects\source\repos\150project3\sdltemplate\loaderparams.h(11): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+         Enemy.cpp
+     1>c:\users\caconnects\source\repos\150project3\sdltemplate\loaderparams.h(11): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+         Base64.cpp
+         Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\John\Documents\Visual Studio 2013\Projects\SDLTemplate\150project\Debug\SDLTemplate.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\SDL2\SDL2-devel-2.0.3-VC\SDL2-2.0.3\lib\x86" SDL2.lib SDL2main.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\John\Documents\Visual Studio 2013\Projects\SDLTemplate\150project\Debug\SDLTemplate.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\John\Documents\Visual Studio 2013\Projects\SDLTemplate\150project\Debug\SDLTemplate.lib" /MACHINE:X86 Debug\Base64.obj
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\CAConnects\Source\Repos\150project3\Debug\SDLTemplate.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\SDL2\SDL2-devel-2.0.3-VC\SDL2-2.0.3\lib\x86" SDL2.lib SDL2main.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\CAConnects\Source\Repos\150project3\Debug\SDLTemplate.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\CAConnects\Source\Repos\150project3\Debug\SDLTemplate.lib" /MACHINE:X86 Debug\Base64.obj
          Debug\Enemy.obj
          Debug\Game.obj
          Debug\GameObject.obj
@@ -42,9 +59,10 @@
          Debug\tinyxml.obj
          Debug\tinyxmlerror.obj
          Debug\tinyxmlparser.obj
-         SDLTemplate.vcxproj -> C:\Users\John\Documents\Visual Studio 2013\Projects\SDLTemplate\150project\Debug\SDLTemplate.exe
-     1>Done Building Project "C:\Users\John\Documents\Visual Studio 2013\Projects\SDLTemplate\150project\SDLTemplate\SDLTemplate.vcxproj" (Build target(s)).
+     1>MSVCRTD.lib(cinitexe.obj) : warning LNK4098: defaultlib 'msvcrt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
+         SDLTemplate.vcxproj -> C:\Users\CAConnects\Source\Repos\150project3\Debug\SDLTemplate.exe
+     1>Done Building Project "C:\Users\CAConnects\Source\Repos\150project3\SDLTemplate\SDLTemplate.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.70
+Time Elapsed 00:00:12.79

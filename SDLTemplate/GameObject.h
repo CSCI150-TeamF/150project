@@ -24,8 +24,11 @@ public:
 		m_textureID = pParams->getTextureID();
 		m_currentRow = 1;
 		m_currentFrame = 1;
-		m_position = new Vector2D(pParams->getX(), pParams->getY());
+		m_position = Vector2D(pParams->getX(), pParams->getY());
+		m_velocity = Vector2D(0, 0);
+		
 	}
+	
 	GameObject(){}
 	virtual void collision();
 	virtual void load(float x, float y, int width, int height, std::string textureID);
@@ -50,6 +53,8 @@ protected:
 	int m_height;
 	bool left;
 	bool right;
-	Vector2D* m_position;
+	Vector2D m_position;
+	Vector2D m_velocity;
+	Vector2D m_acceleration;
 };
 #endif
