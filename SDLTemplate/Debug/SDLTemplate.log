@@ -1,4 +1,4 @@
-﻿Build started 11/24/2014 7:53:04 PM.
+﻿Build started 11/26/2014 1:27:19 PM.
      1>Project "C:\Users\CAConnects\Source\Repos\150project3\SDLTemplate\SDLTemplate.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\SDL2\SDL2-devel-2.0.3-VC\SDL2-2.0.3\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Base64.cpp Enemy.cpp Game.cpp GameObject.cpp GameStateMachine.cpp Layer.cpp Level.cpp LevelParser.cpp main.cpp MenuButton.cpp MenuObject.cpp MenuState.cpp Player.cpp PlayState.cpp TextureManager.cpp TileLayer.cpp tinystr.cpp tinyxml.cpp tinyxmlerror.cpp tinyxmlparser.cpp
@@ -65,4 +65,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:14.91
+Time Elapsed 00:00:19.95
