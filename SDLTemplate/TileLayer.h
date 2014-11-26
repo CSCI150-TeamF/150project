@@ -1,6 +1,7 @@
 #include <SDL.h>
 #include "Level.h"
 #include "includes.h"
+#include "Vector2D.h"
 
 #ifndef __TileLayer__
 #define __TileLayer__
@@ -32,8 +33,8 @@ private:
 	int m_tileSize;
 
 	//needed to scroll map used later
-	//Vector2D m_position;
-	//Vector2D m_velocity;
+	Vector2D m_position;
+	Vector2D m_velocity;
 
 	const vector<Tileset> &m_tilesets;
 	vector<vector<int>> m_tileIDs;
