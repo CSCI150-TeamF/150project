@@ -1,6 +1,7 @@
 #include "PlayState.h"
 #include "Game.h"
 #include "MenuObject.h"
+
 const string PlayState::s_playID = "PLAY";
 
 //*****************************************************************************************//
@@ -10,7 +11,7 @@ const string PlayState::s_playID = "PLAY";
 
 void PlayState::update()
 {
-	for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
+	for (vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
 	{
 
 
@@ -25,7 +26,7 @@ void PlayState::render() //moved from game render
 {
 	SDL_RenderClear(TheGame::Instance()->getRenderer()); // clear to the draw colour
 	// loop through our objects and draw them
-	for (std::vector<GameObject*>::size_type i = 0; i !=m_gameObjects.size(); i++)
+	for (vector<GameObject*>::size_type i = 0; i !=m_gameObjects.size(); i++)
 	{
 		m_gameObjects[i]->draw();
 	}
@@ -64,25 +65,19 @@ bool PlayState::onEnter() //setup the Playstate
 {
 	cout << "entering playstate.\n";
 
-	GameObject* m_enemy;
-	if (!TheTextureManager::Instance()->load("animate-alpha.png",
-		"animate", Game::Instance()->m_pRenderer))
-	{
-		return false;
-	}
-
-	cout << "1";
-	m_enemy = new Enemy();
-	cout << "3";
-	m_enemy->load(0.0, 480.0, 128, 82, "animate");
-	cout << "2";
-	m_gameObjects.push_back(m_enemy);
+	StateParser stateParser;
+	stateParser.parseState("play.xml", s_playID, &m_gameObjects, &m_textureIDList);
 
 	return true;
 }
 
 bool PlayState::onExit()
 {
+	// clear the texture manager
+	for (int i = 0; i < m_textureIDList.size(); i++)
+	{
+		TheTextureManager::Instance()->clearFromTextureMap(m_textureIDList[i]);
+	}
 	cout << "exiting playstate.\n";
 	return true;
 }

@@ -2,15 +2,14 @@
 #include "includes.h"
 #include "SDL.h"
 #include "Game.h"
-void GameObject::load(float x, float y, int width, int height, std::string textureID) //load game object
+void GameObject::load(const LoaderParams* pParams) //load game object
 {
-	m_position = new Vector2D();
-	GameObject::setX(x);
-	GameObject::setY(y);
-	m_width = width;
-	m_height = height;
-	m_textureID = textureID;
-
+	m_width = pParams->getWidth();
+	m_height = pParams->getHeight();
+	m_textureID = pParams->getTextureID();
+	m_position = new Vector2D(pParams->getX(), pParams->getY());
+	m_velocity = new Vector2D(0, 0);
+	// Acceleration?
 	m_currentRow = 1;
 	m_currentFrame = 1;
 }

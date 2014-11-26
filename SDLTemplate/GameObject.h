@@ -28,7 +28,7 @@ public:
 	}
 	GameObject(){}
 	virtual void collision();
-	virtual void load(float x, float y, int width, int height, std::string textureID);
+	virtual void load(const LoaderParams* pParams);
 	virtual void draw(); //No longer requires SDL renderer. renderer is inside function
 	virtual void updateDirection(int dirSign);
 	virtual void update();
@@ -42,7 +42,7 @@ public:
 	virtual float getY();
 	int flipFlag;
 protected:
-	std::string m_textureID;
+	string m_textureID;
 	int m_currentFrame;
 	int m_currentRow;
 	int m_direction = 0;
@@ -51,5 +51,7 @@ protected:
 	bool left;
 	bool right;
 	Vector2D* m_position;
+	Vector2D* m_velocity;
+	
 };
 #endif

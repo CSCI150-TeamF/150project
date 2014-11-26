@@ -3,9 +3,9 @@
 
 bool keyisRight = false;
 
-void Player::load(float x, float y, int width, int height, std::string textureID) //load player sprite
+void Player::load(const LoaderParams *pParams) //load player sprite
 {
-	GameObject::load(x, y, width, height, textureID);
+	GameObject::load(pParams);
 }
 void Player::draw(SDL_Renderer* pRenderer) //draw player
 {

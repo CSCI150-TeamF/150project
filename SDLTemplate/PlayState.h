@@ -1,6 +1,8 @@
 #include "GameState.h"
 #include "GameObject.h"
 #include "LevelParser.h"
+#include "StateParser.h"
+
 //state we use to render the game
 #ifndef __PlayState__
 #define __PlayState__

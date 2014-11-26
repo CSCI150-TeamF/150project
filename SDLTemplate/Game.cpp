@@ -50,7 +50,8 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	//create and Push initial Gamestates
 	m_pGameStateMachine->changeState(new MenuState());
 	
-
+	TheGameObjectFactory::Instance()->registerType("Player", new PlayerCreator());
+	TheGameObjectFactory::Instance()->registerType("Enemy", new EnemyCreator());
 	std::cout << "init success\n";
 	m_bRunning = true; // everything inited successfully, start the main loop
 	return true;
