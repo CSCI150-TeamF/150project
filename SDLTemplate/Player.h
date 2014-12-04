@@ -10,8 +10,10 @@ public:
 	void load(const LoaderParams *pParams);
 	void draw(SDL_Renderer* pRenderer);
 	void update();
+	void jumpFx();
 	void clean();
 	void handleInput();
+	
 };
 
 class PlayerCreator : public BaseCreator

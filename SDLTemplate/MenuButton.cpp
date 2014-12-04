@@ -1,4 +1,5 @@
 #include "MenuButton.h"
+#include "Game.h"
 
 MenuButton::MenuButton(const LoaderParams* pParams) :
 GameObject(pParams)
@@ -12,6 +13,8 @@ void MenuButton::draw()
 }
 void MenuButton::update(SDL_Event* event, int x, int y)
 {
+	
+
 	if (x < ((int)m_position->getX() + m_width)
 		&& x >(int)m_position->getX()
 		&& y < ((int)m_position->getY() + m_height)
@@ -21,6 +24,12 @@ void MenuButton::update(SDL_Event* event, int x, int y)
 		if (event->button.button == SDL_BUTTON_LEFT)
 		{
 			m_currentFrame = CLICKED;
+			if (getY() < 300)
+			{
+				TheGame::Instance()->m_pGameStateMachine->changeState(new PlayState());
+			}
+			else
+				TheGame::Instance()->m_bRunning = false;
 		}
 	}
 	else

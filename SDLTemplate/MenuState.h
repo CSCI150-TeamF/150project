@@ -15,6 +15,8 @@ public:
 	virtual bool onEnter();
 	virtual bool onExit();
 
+
+	
 	virtual std::string getStateID() const { return s_menuID; }
 	std::vector<GameObject*> m_gameObjects;
 private:

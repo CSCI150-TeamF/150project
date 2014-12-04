@@ -9,6 +9,7 @@ void MenuState::update()
 	{
 		MenuState::m_gameObjects[i]->update();
 	} */
+	
 }
 
 void MenuState::render()
@@ -31,23 +32,38 @@ void MenuState::render()
 void MenuState::handleEvents(SDL_Event *event)
 {
 
-	if (event->type == SDL_KEYDOWN)
-	{
-		//get the x-value (m_x)
 
-		switch (event->key.keysym.sym)
-		{
-			//update m_x, update direction, animate
-		case SDLK_UP: {} break;
-		case SDLK_DOWN: {} break;
-		case SDLK_SPACE: {TheGame::Instance()->m_pGameStateMachine->changeState(new PlayState()); } break;
+
+	if (event->type == SDL_MOUSEBUTTONDOWN)
+	{
+
+		//get the x-value (m_x)
+		for (int i = 0; i < m_gameObjects.size(); i++){
+		    
+			m_gameObjects[i]->update(event, event->motion.x, event->motion.y);
+
 		}
+
+		//switch (event->key.keysym.sym)
+		//{
+		//	//update m_x, update direction, animate
+		//case SDLK_UP: {} break;
+		//case SDLK_DOWN: {} break;
+		///*case SDLK_SPACE: {TheGame::Instance()->m_pGameStateMachine->changeState(new PlayState()); } break;*/
+		//}
 	}
 
 	if (event->type == SDL_MOUSEMOTION)
 	{
 		for (int i = 0; i < m_gameObjects.size(); i++)
 		m_gameObjects[i]->update(event, event->motion.x, event->motion.y); 
+	}
+	if (event->type == SDL_KEYDOWN)
+	{
+		if (event->key.keysym.sym == SDLK_ESCAPE)
+		{
+			TheGame::Instance()->m_bRunning = false;
+		}
 	}
 	
 }

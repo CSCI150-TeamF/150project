@@ -7,6 +7,11 @@
 #include "GameObject.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "Bullet.h"
+#include "Planet.h"
+#include "Stars.h"
+#include "Comet.h"
+#include "BigComet.h"
 
 
 #ifndef __Game__
@@ -23,6 +28,8 @@ public:
 	void handleEvents();
 	void clean();
 	SDL_Renderer* getRenderer(){ return m_pRenderer; }
+	bool m_bRunning;
+	
 	// a function to access the private running variable
 	bool running() { return m_bRunning; }
 	//std::vector<GameObject*> m_gameObjects;
@@ -42,7 +49,7 @@ public:
 private:
 	SDL_Window* m_pWindow;
 	int m_currentFrame;
-	bool m_bRunning;
+	
 	static Game* s_pInstance;
 	Game() {}
 };

@@ -3,6 +3,8 @@
 #include "includes.h"
 #include "LoaderParams.h"
 #include "Vector2D.h"
+#include "StateParser.h"
+
 
 // All objects that are rendered should inherit this class
 
@@ -19,6 +21,7 @@ class GameObject
 public:
 	GameObject(const LoaderParams* pParams)
 	{
+		
 		m_width = pParams->getWidth();
 		m_height = pParams->getHeight();
 		m_textureID = pParams->getTextureID();
@@ -33,6 +36,7 @@ public:
 	virtual void updateDirection(int dirSign);
 	virtual void update();
 	virtual void update(SDL_Event* event, int x, int y){}
+	virtual void jumpFx();
 	virtual void reset();
 	virtual void clean();
 	static const int speed = 10;
@@ -41,13 +45,21 @@ public:
 	virtual void setY(float y);
 	virtual float getY();
 	int flipFlag;
-protected:
-	string m_textureID;
-	int m_currentFrame;
-	int m_currentRow;
-	int m_direction = 0;
 	int m_width;
 	int m_height;
+	int m_currentFrame;
+	int m_currentRow;
+	
+	bool isJump = false;
+	bool isFall = false;
+	int jump = 0;
+	const int jumpH = 10;
+
+protected:
+	string m_textureID;
+	
+	int m_direction = 0;
+	
 	bool left;
 	bool right;
 	Vector2D* m_position;

@@ -25,7 +25,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 			if (m_pRenderer != 0) // renderer init success
 			{
 				std::cout << "renderer creation success\n";
-				SDL_SetRenderDrawColor(m_pRenderer, 193, 194, 198, 255);
+				SDL_SetRenderDrawColor(m_pRenderer, 0, 0, 0, 255);
 			}
 			else
 			{
@@ -50,12 +50,19 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	//create and Push initial Gamestates
 	m_pGameStateMachine->changeState(new MenuState());
 	
+	TheGameObjectFactory::Instance()->registerType("Stars", new StarsCreator());
+	TheGameObjectFactory::Instance()->registerType("Planet", new PlanetCreator());
+	TheGameObjectFactory::Instance()->registerType("BigComet", new BigCometCreator());
+	TheGameObjectFactory::Instance()->registerType("Comet", new CometCreator());
+	TheGameObjectFactory::Instance()->registerType("Bullet", new BulletCreator());
 	TheGameObjectFactory::Instance()->registerType("Player", new PlayerCreator());
-	TheGameObjectFactory::Instance()->registerType("Enemy", new EnemyCreator());
+	
 	std::cout << "init success\n";
 	m_bRunning = true; // everything inited successfully, start the main loop
 	return true;
 }
+
+
 
 void Game::render()
 {

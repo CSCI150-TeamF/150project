@@ -13,13 +13,25 @@
 
 <PLAY>
 	<TEXTURES>
-		<texture filename="animate-alpha.png" ID="Player"/>
-		<texture filename="animate-alpha.png" ID="Enemy"/>
+        <texture filename="stars.png" ID="Stars" render="false"/>
+        <texture filename="planet.png" ID="Planet" render="false"/>
+        <texture filename="comet.png" ID="BigComet" render="false"/>
+        <texture filename="comet.png" ID="Comet" render="false"/>
+        <texture filename="comet.png" ID="Bullet" render="false"/>
+		<texture filename="astronaut.png" ID="Player"/>
+        
 	</TEXTURES>
 	
 	<OBJECTS>
-		<object type="Player" x="500" y="100" width="128" height="82" textureID= "Player"/>
-		<object type="Enemy" x="100" y="100" width="128" height="82" textureID= "Enemy"/>
+        
+        <object type="Stars" x="0" y="0" width="640" height="480" textureID= "Stars"/>
+        <object type="Planet" x="380" y="55" width="64" height="64" textureID= "Planet"/>
+        <object type="BigComet" x="150" y="0" width="34" height="34" textureID= "BigComet"/>
+        <object type="Comet" x="50" y="0" width="34" height="34" textureID= "Comet"/>
+        <object type="Bullet" x="200" y="0" width="34" height="34" textureID= "Bullet"/>
+		<object type="Player" x="320" y="480" width="64" height="82" textureID= "Player"/>
+        
+
 	</OBJECTS>
 </PLAY>
 

@@ -6,8 +6,11 @@ public:
 	
 	void load(const LoaderParams *pParams);
 	void draw(SDL_Renderer* pRenderer);
+	void jumpFx();
 	void update();
-	void clean();
+	void clean(); 
+	void collision();
+	bool touchingGround;
 };
 
 class EnemyCreator : public BaseCreator

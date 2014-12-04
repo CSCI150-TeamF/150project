@@ -72,6 +72,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Base64.cpp" />
+    <ClCompile Include="BigComet.cpp" />
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Comet.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
@@ -83,8 +86,10 @@
     <ClCompile Include="MenuButton.cpp" />
     <ClCompile Include="MenuObject.cpp" />
     <ClCompile Include="MenuState.cpp" />
+    <ClCompile Include="Planet.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayState.cpp" />
+    <ClCompile Include="Stars.cpp" />
     <ClCompile Include="StateParser.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="TileLayer.cpp" />
@@ -95,6 +100,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base64.h" />
+    <ClInclude Include="BigComet.h" />
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Comet.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
@@ -109,8 +117,10 @@
     <ClInclude Include="MenuButton.h" />
     <ClInclude Include="MenuObject.h" />
     <ClInclude Include="MenuState.h" />
+    <ClInclude Include="Planet.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayState.h" />
+    <ClInclude Include="Stars.h" />
     <ClInclude Include="StateParser.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="TileLayer.h" />

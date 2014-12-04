@@ -1,6 +1,8 @@
 #include "Game.h"
 #include "includes.h"
 // our Game Loop
+const int FRAMES_PER_SECOND = 20;
+
 
 int main(int argc, char* argv[])
 {

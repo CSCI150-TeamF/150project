@@ -11,7 +11,7 @@ void GameObject::load(const LoaderParams* pParams) //load game object
 	m_velocity = new Vector2D(0, 0);
 	// Acceleration?
 	m_currentRow = 1;
-	m_currentFrame = 1;
+	m_currentFrame = 0;
 }
 void GameObject::draw() //draw game object
 {
@@ -28,6 +28,14 @@ void GameObject::draw() //draw game object
 		
 	}
 }
+
+void GameObject::jumpFx()
+{
+
+}
+
+
+
 void GameObject::update()
 {
 	

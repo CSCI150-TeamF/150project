@@ -11,13 +11,56 @@ void Player::draw(SDL_Renderer* pRenderer) //draw player
 {
 	GameObject::draw();
 }
+
+
+
 void Player::update() //update player position
 {
-	m_position->setX(m_position->getX() + 1);
+	
+	m_currentFrame = int(((SDL_GetTicks() / 100) % 6));
 }
-void Player::clean()
+
+void Player::jumpFx()
 {
 
+	if (isJump != true)
+	{
+		isJump = true;
+	}
+
+	float y = getY();
+	if (isJump == true)
+	{
+		if (jump >= jumpH || isFall == true)
+		{
+			jump--;
+			if (jump == 0)
+			{
+				isJump = false;
+				isFall = false;
+				
+			}
+			m_position->setY(++y);
+			isFall = true;
+		}
+		else if (jump <= 0 && isFall == true)
+		{
+			jump - 0;
+			isFall = false;
+			isJump = false;
+		}
+		else
+		{
+			jump++;
+			setY(--y);
+		}
+	}
+}
+
+void Player::clean()
+{
+	
+	
 }
 void Player::handleInput()
 {

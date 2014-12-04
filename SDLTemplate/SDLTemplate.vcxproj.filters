@@ -22,6 +22,11 @@
     <ClCompile Include="tinyxmlerror.cpp" />
     <ClCompile Include="tinyxmlparser.cpp" />
     <ClCompile Include="StateParser.cpp" />
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Planet.cpp" />
+    <ClCompile Include="Stars.cpp" />
+    <ClCompile Include="Comet.cpp" />
+    <ClCompile Include="BigComet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base64.h" />
@@ -47,5 +52,10 @@
     <ClInclude Include="Vector2D.h" />
     <ClInclude Include="GameObjectFactory.h" />
     <ClInclude Include="StateParser.h" />
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Planet.h" />
+    <ClInclude Include="Stars.h" />
+    <ClInclude Include="Comet.h" />
+    <ClInclude Include="BigComet.h" />
   </ItemGroup>
 </Project>
