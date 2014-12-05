@@ -26,7 +26,7 @@
         
         <object type="Stars" x="0" y="0" width="640" height="480" textureID= "Stars"/>
         <object type="Planet" x="380" y="55" width="64" height="64" textureID= "Planet"/>
-        <object type="BigComet" x="150" y="0" width="34" height="34" textureID= "BigComet"/>
+        <object type="BigComet" x="500" y="0" width="34" height="34" textureID= "BigComet"/>
         <object type="Comet" x="50" y="0" width="34" height="34" textureID= "Comet"/>
         <object type="Bullet" x="200" y="0" width="34" height="34" textureID= "Bullet"/>
 		<object type="Player" x="320" y="480" width="64" height="82" textureID= "Player"/>

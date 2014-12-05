@@ -22,7 +22,7 @@ void Bullet::clean()
 	{
 		
 		m_position->setY(0);
-		m_position->setX(rand() % 640);
+		m_position->setX(rand() % 630);
 			
 	
 	}

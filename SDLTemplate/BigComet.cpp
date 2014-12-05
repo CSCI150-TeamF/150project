@@ -22,12 +22,12 @@ void BigComet::clean()
 	{
 
 		m_position->setY(0);
-		m_position->setX(rand() % 640);
+		m_position->setX(rand() % 630);
 
 
 	}
 	else
-		m_position->setY(m_position->getY() + 4);
+		m_position->setY(m_position->getY() + 2);
 
 	m_currentFrame = int(((SDL_GetTicks() / 240) % 3));
 }
