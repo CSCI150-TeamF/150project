@@ -53,7 +53,7 @@ void PlayState::handleEvents(SDL_Event *event) //handle gameObject Input
 				//update m_x, update direction, animate
 				case SDLK_LEFT: {currentObject->setX(x -= 10); currentObject->updateDirection(-1); currentObject->update(); } break;
 				case SDLK_RIGHT: {currentObject->setX(x += 10); currentObject->updateDirection(1); currentObject->update(); } break;
-				case SDLK_UP:{currentObject->jumpFx(); cout << "ddfdfdf"; }break;
+				case SDLK_UP:{currentObject->jumpFx();}break;
 				case SDLK_BACKSPACE: {TheGame::Instance()->m_pGameStateMachine->changeState(new MenuState());} break;
 				}
 			}	
@@ -105,14 +105,14 @@ void PlayState::CollisionCheck()
 
 	for (vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
 	{
-		if (pPlayer = dynamic_cast<Player*>(currentObject))
-			cout << "j";
+		if (pPlayer = dynamic_cast<Player*>(currentObject));
+			
 	}
 	for (vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
 	{
 		if (nextObject3 = dynamic_cast<BigComet*>(m_gameObjects[i]))
 		{
-			cout << "shadkjdjashdka";
+			
 			bigcometObject = m_gameObjects[i];
 		}
 	}
@@ -120,7 +120,7 @@ void PlayState::CollisionCheck()
 	{
 		if (nextObject2 = dynamic_cast<Comet*>(m_gameObjects[i]))
 		{
-			cout << "shadkjdjashdka";
+			
 			cometObject = m_gameObjects[i];
 		}
 	}
@@ -128,7 +128,7 @@ void PlayState::CollisionCheck()
 	{
 		if (nextObject = dynamic_cast<Bullet*>(m_gameObjects[i]))
 		{
-			cout << "shadkjdjashdka";
+			
 			bulletObject = m_gameObjects[i];
 		}
 	}
@@ -166,6 +166,13 @@ void PlayState::CollisionCheck()
 	}
 	if (SDL_HasIntersection(&plyRect,
 		&comDestRect))
+	{
+		cout << "Collision";
+
+		TheGame::Instance()->m_pGameStateMachine->changeState(new MenuState());
+	}
+	if (SDL_HasIntersection(&plyRect,
+		&bigcomDestRect))
 	{
 		cout << "Collision";
 
